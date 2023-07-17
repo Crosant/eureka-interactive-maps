@@ -10,7 +10,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/vue-fontawesome": "^0.1.10",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
     "autoprefixer": "^10.4.14",
     "core-js": "^3.18.0",
     "eureka-canvas": "^0.8.0",
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.9",
+    "@vue/babel-preset-app": "^5.0.8",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
