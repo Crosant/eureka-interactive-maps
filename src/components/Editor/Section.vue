@@ -99,7 +99,6 @@
             },
             itemComponent() {
                 let componentName = ''
-                console.log(this)
                 switch (getCurrentInstance().vnode.key) {
                     case 'monsters':
                         componentName = 'Monster'
