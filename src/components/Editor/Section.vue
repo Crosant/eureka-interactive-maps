@@ -19,7 +19,7 @@
         </div>
         <div v-show="expanded && filteredItems.length" class="sectionBody p-4 bg-gray-100">
             <component :is="itemComponent" v-for="item in filteredItems" :key="item.id" :id="item.id" :item="item"
-                :section-key="$vnode.key" :jsonDataShow="jsonDataShow" :fates="fates" @updateItem="updateItem"
+                :section-key="sectionID" :jsonDataShow="jsonDataShow" :fates="fates" @updateItem="updateItem"
                 @setItemPosition="setItemPosition" @updateItemShowData="updateItemShowData" @deleteItem="deleteItem" @updateAllItemShowData="updateAllItemShowData" />
         </div>
     </div>
@@ -36,7 +36,7 @@
     import CriticalEngagements from './SectionItems/CriticalEngagements'
     import Skirmishes from './SectionItems/Skirmishes'
     import Enemies from './SectionItems/Enemies'
-
+    import {getCurrentInstance} from "vue"
     export default {
         name: 'Section',
         components: {
@@ -94,9 +94,13 @@
 
                 return items
             },
+            sectionID(){
+                return getCurrentInstance().vnode.key
+            },
             itemComponent() {
                 let componentName = ''
-                switch (this.$vnode.key) {
+                console.log(this)
+                switch (getCurrentInstance().vnode.key) {
                     case 'monsters':
                         componentName = 'Monster'
                         break;
@@ -131,15 +135,15 @@
                 return componentName
             },
             showOnMap() {
-                if (this.jsonDataShow.hasOwnProperty(this.$vnode.key) && this.jsonDataShow[this.$vnode.key].hasOwnProperty('showOnMap')) {
-                    return this.jsonDataShow[this.$vnode.key].showOnMap
+                if (this.jsonDataShow.hasOwnProperty(getCurrentInstance().vnode.key) && this.jsonDataShow[getCurrentInstance().vnode.key].hasOwnProperty('showOnMap')) {
+                    return this.jsonDataShow[getCurrentInstance().vnode.key].showOnMap
                 }
 
                 return true
             },
             expanded() {
-                if (this.jsonDataShow.hasOwnProperty(this.$vnode.key) && this.jsonDataShow[this.$vnode.key].hasOwnProperty('expanded')) {
-                    return this.jsonDataShow[this.$vnode.key].expanded
+                if (this.jsonDataShow.hasOwnProperty(getCurrentInstance().vnode.key) && this.jsonDataShow[getCurrentInstance().vnode.key].hasOwnProperty('expanded')) {
+                    return this.jsonDataShow[getCurrentInstance().vnode.key].expanded
                 }
 
                 return true
@@ -148,7 +152,7 @@
         methods: {
             addToSection() {
                 this.$emit('addToSection', {
-                    key: this.$vnode.key
+                    key: getCurrentInstance().vnode.key
                 })
             },
             setItemPosition(evt) {
@@ -158,10 +162,10 @@
                 this.$emit('updateItem', sectionKey, newItem)
             },
             updateShowOnMap(evt) {
-                this.$emit('updateShowData', this.$vnode.key, 'showOnMap', evt.target.checked)
+                this.$emit('updateShowData', getCurrentInstance().vnode.key, 'showOnMap', evt.target.checked)
             },
             toggleExpanded() {
-                this.$emit('updateShowData', this.$vnode.key, 'expanded', !this.expanded)
+                this.$emit('updateShowData', getCurrentInstance().vnode.key, 'expanded', !this.expanded)
             },
             updateItemShowData(itemId, showKey, value) {
                 this.$emit('updateItemShowData', itemId, showKey, value)

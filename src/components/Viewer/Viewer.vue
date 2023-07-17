@@ -25,7 +25,7 @@
 </template>
 
 <script>
-    import EurekaCanvas from 'eureka-canvas'
+    import EurekaCanvas from 'eureka-canvas-new'
     import Filters from './Filters'
     import ItemInformation from './ItemInformation'
     import DefaultItemInformation from './DefaultItemInformation'
