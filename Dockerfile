@@ -1,5 +1,5 @@
 # --- BUILD
-FROM node:gallium-alpine AS build
+FROM node:alpine AS build
 
 WORKDIR /usr/build
 RUN apk add git
