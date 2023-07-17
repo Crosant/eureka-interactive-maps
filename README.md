@@ -1,6 +1,6 @@
 # FFXIV Interactive Eureka Maps
 
-[Site](https://www.ffxiv-interactive-eureka-maps.com)
+[Site](https://eurekan-maps.crosant.de)
 
 An interactive map for the zones of Eureka (Anemos, Pagos, Pyros, Hydatos) for the game Final Fantasy XIV.
 
