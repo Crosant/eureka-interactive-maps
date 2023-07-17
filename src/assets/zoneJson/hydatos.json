@@ -112,10 +112,12 @@
                 "id": "5220edda-b1c7-4882-a4d5-104b51a11a8f",
                 "name": "Crawling Chaos",
                 "level": 55,
-                "position": {
-                    "x": 24.2,
-                    "y": 19
-                },
+                "position": [
+                    {
+                        "x": 25.5,
+                        "y": 15.5
+                    }
+                ],
                 "element": "water",
                 "drops": [],
                 "weather": "",
