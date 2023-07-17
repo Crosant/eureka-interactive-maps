@@ -29,9 +29,9 @@
 </template>
 
 <script>
-    import Vue from 'vue'
+    //import * as Vue from 'vue'
     import { v4 as uuidv4 } from 'uuid'
-    import EurekaCanvas from 'eureka-canvas'
+    import EurekaCanvas from 'eureka-canvas-new'
     import MapDataEditor from './MapDataEditor'
 
     export default {
@@ -205,7 +205,7 @@
                         return item.id == this.setPositionToItem.id
                     })
                     if (Array.isArray(this.jsonData[this.setPositionToItem.section].items[index].position)) {
-                        Vue.set(this.jsonData[this.setPositionToItem.section].items[index].position, this.setPositionToItem.index, this.clickCoordinates)
+                        this.set(this.jsonData[this.setPositionToItem.section].items[index].position, this.setPositionToItem.index, this.clickCoordinates)
                     } else {
                         this.jsonData[this.setPositionToItem.section].items[index].position = [this.clickCoordinates]
                     }
@@ -270,7 +270,7 @@
                     this.jsonDataShow[item.key].expanded = true
                 }
 
-                Vue.nextTick(() => {
+                this.nextTick(() => {
                     let itemContainer = document.getElementById(item.id)
                     if (itemContainer) {
                         document.getElementById('mapDataList').scrollTop = itemContainer.offsetTop

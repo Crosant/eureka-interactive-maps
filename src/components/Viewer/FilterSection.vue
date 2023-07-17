@@ -25,6 +25,8 @@
     import Enemies from './SectionItems/Enemies'
     import CriticalEngagements from './SectionItems/CriticalEngagements'
     import Skirmishes from './SectionItems/Skirmishes'
+    import {getCurrentInstance} from 'vue'
+
 
     export default {
         name: 'filter-section',
@@ -55,7 +57,7 @@
             },
             filterComponent() {
                 let component = null
-                switch (this.$vnode.key) {
+                switch (getCurrentInstance().vnode.key) {
                     case 'monsters':
                         component = 'Monsters'
                         break
@@ -75,7 +77,7 @@
                 return component
             },
             viewInputId() {
-                return `showhidecheckbox-${this.$vnode.key}`
+                return `showhidecheckbox-${getCurrentInstance().vnode.key}`
             }
         },
         methods: {

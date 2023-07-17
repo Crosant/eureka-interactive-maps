@@ -1,16 +1,18 @@
-import Vue from 'vue'
+import * as Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './assets/styles/index.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPlus, faCaretUp, faCaretDown, faCaretLeft, faCaretRight, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { createApp } from 'vue'
 
 library.add(faPlus, faCaretUp, faCaretDown, faCaretLeft, faCaretRight, faTimes)
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
-
-Vue.config.productionTip = false
+//Vue.component('font-awesome-icon', FontAwesomeIcon)
+//const app = createApp(App)
+//Vue.config.productionTip = false
+//app.component('font-awesome-icon', FontAwesomeIcon)
 
 router.afterEach((to) => {
     Vue.nextTick(() => {
@@ -21,8 +23,8 @@ router.afterEach((to) => {
         document.title = title + 'FFXIV Interactive Eureka Maps'
     })
 })
-
-new Vue({
+/*new Vue({
     router,
     render: h => h(App),
-}).$mount('#app')
+}).$mount('#app')*/
+createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(router).mount('#app')

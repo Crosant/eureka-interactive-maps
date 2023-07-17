@@ -1,9 +1,14 @@
-<template>
+<!--<template>
   <Page id="contribute">
     <div class="flex-grow flex justify-center">
       <div>
         <div>Current Version: v{{ currentVersion }}</div>
-        <Timeline :timeline-items="timelineItems" :message-when-no-items="'-'" order="desc"/>
+        <Timeline :value="events">
+    <template #content="slotProps">
+        {{slotProps.item.status}}
+    </template>
+</Timeline>
+
       </div>
     </div>
   </Page>
@@ -11,8 +16,8 @@
 
 <script>
   import Page from './Page'
-  import Timeline from 'timeline-vuejs'
-
+  //import Timeline from 'timeline-vuejs'
+  import Timeline from 'primevue/timeline';
   export default {
     name: 'Changelog',
     components: {
@@ -63,4 +68,4 @@
       }
     }
   }
-</script>
+</script>-->
