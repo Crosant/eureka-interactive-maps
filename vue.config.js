@@ -90,7 +90,7 @@ module.exports = {
     },
     configureWebpack: {
         plugins: [
-            new SitemapPlugin({'https://eurekan-maps.crosant.dr', paths, {
+            new SitemapPlugin({base: 'https://eurekan-maps.crosant.de', paths, {
                 filename: 'sitemap.xml',
                 lastmod: true,
                 changefreq: 'daily',
