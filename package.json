@@ -31,7 +31,7 @@
     "@vue/cli-service": "^5.0.8",
     "eslint": "^8.45.0",
     "eslint-plugin-vue": "^9.15.1",
-    "postcss-cli": "^10.1.0",
+    "postcss-cli": "^11.0.0",
     "sitemap-webpack-plugin": "^1.1.1",
     "vue-template-compiler": "^2.7.14"
   },
