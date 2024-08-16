@@ -90,7 +90,7 @@ module.exports = {
     },
     configureWebpack: {
         plugins: [
-            new SitemapPlugin('https://www.ffxiv-interactive-eureka-maps.com', paths, {
+            new SitemapPlugin('https://eurekan-maps.crosant.dr', paths, {
                 filename: 'sitemap.xml',
                 lastmod: true,
                 changefreq: 'daily',
